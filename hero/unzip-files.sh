@@ -18,4 +18,3 @@ touch proprietary/*
 (cd qcom/proprietary-open/libaudioeq && ./unzip-files.sh $ZIP)
 (cd qcom/proprietary-open/libgps && ./unzip-files.sh $ZIP)
 (cd qcom/proprietary-open/libhgl && ./unzip-files.sh $ZIP)
-

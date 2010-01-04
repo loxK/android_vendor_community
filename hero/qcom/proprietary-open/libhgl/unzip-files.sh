@@ -8,4 +8,4 @@ mkdir -p proprietary
 unzip -j -o ../../../../../../$1 system/lib/libhgl.so -d proprietary
 touch proprietary/*
 
-chmod 755 proprietary/set_grp_id
+# chmod 755 proprietary/set_grp_id
