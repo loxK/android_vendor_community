@@ -51,9 +51,15 @@ the 2.x rom should simply be named update-signed.zip.
 
 2. Run `repo sync` to update the repositories
 
-3. Run `. build/envsetup.sh` to setup your build environment
+3. Run `pushd vendor/community/hero && ./unzip-files.sh && popd`
+ to unzip proprietary files from existing roms.  Note that this step requires you to have two files in your AOSP root directory:
 
-4. Run `lunch community_hero-eng` to select the right configuration
+  * `update-signed.zip` (this should be a HERO21 or KaguDroid ROM)
+  * `signed-google_ion-ota-14721.zip` 
+
+4. . Run `. build/envsetup.sh` to setup your build environment
+
+5. Run `lunch community_hero-eng` to select the right configuration
 
 # Known issues
 
