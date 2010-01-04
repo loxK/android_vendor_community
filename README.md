@@ -58,8 +58,6 @@ the 2.x rom should simply be named update-signed.zip.
 # Known issues
 
   * Currently make otapackage does not work properly and does not produce a usable zip.  A patch exists to get close, but I'm not comfortable with the hacky changes I've made so far.
-  * Two versions of su are installed (one in /system/bin and one in /system/xbin)
-  * Superuser.apk does not work properly
   * Brightness control in power control widget is not aligned correctly 
   * No dictionary is included in the LatinIME app
 
