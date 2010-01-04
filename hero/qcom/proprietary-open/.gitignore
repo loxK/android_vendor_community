@@ -1,0 +1,6 @@
+dsp/libqcamera/proprietary/*
+dsp/mm/proprietary/*
+libaudioeq/proprietary/*
+libgps/proprietary/*
+libhgl/proprietary/*
+
