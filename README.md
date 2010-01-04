@@ -1,7 +1,7 @@
 # HTC Hero Community vendor tree
 
 This is a vendor tree that allows developers to compile Android 2.0 (eclair)
-for HTC Hero devices.  It is based off work by cyanogen, lox, kiall and
+for HTC Hero devices.  It is based off work by [cyanogen][1], lox, kiall and
 jnwhiteh and can be used as a base for custom ROMS.
 
 In order to compile using this source, you must have a 2.x ROM for Hero, along
@@ -13,37 +13,41 @@ the 2.x rom should simply be named update-signed.zip.
 
 1. Add the following to your `.repo/localmanifest` file
 
-     <?xml version="1.0" encoding="UTF-8"?>
-     
-     <manifest>
-         <remote name="github" fetch="git://github.com/" />
-     
-     	<!-- Get rid of the qualcomm repos -->
-         <remove-project name="platform/vendor/qcom/android-open" />
-         <remove-project name="platform/vendor/qcom/proprietary-open" />
-     
-     	<!-- Add Superuser, to override default su extra -->
-         <project path="packages/apps/Superuser" name="cyanogen/android_packages_apps_Superuser" revision="refs/heads/eclair" remote="github" />
-     
-     	<!-- Synchronization and other fixes -->
-     	<remove-project name="platform/frameworks/base" />
-     	<project path="frameworks/base" name="kiall/android_platform_frameworks_base" remote="github" />
-     
-     	<!-- Power button menu, etc. -->
-     	<remove-project name="platform/frameworks/policies/base" />
-     	<project path="frameworks/policies/base" name="kiall/android_platform_frameworks_policies_base" remote="github" />
-     
-     	<!-- Enhanced Launcher -->
-     	<remove-project name="platform/packages/apps/Launcher" />
-     	<project path="packages/apps/Launcher" name="cyanogen/android_packages_apps_Launcher" remote="github" />
-     
-     	<!-- Settings for widget fixes, etc. -->
-     	<remove-project name="platform/packages/apps/Settings" />
-     	<project path="packages/apps/Settings" name="kiall/android_packages_apps_Settings" remote="github" />
-     
-     	<!-- Community repo -->
-     	<project path="vendor/community" name="jnwhiteh/vendor_community_hero" remote="github" />
-     </manifest>
+    <?xml version="1.0" encoding="UTF-8"?>
+    
+    <manifest>
+        <remote name="github" fetch="git://github.com/" />
+    
+    	<!-- Get rid of the qualcomm repos -->
+        <remove-project name="platform/vendor/qcom/android-open" />
+        <remove-project name="platform/vendor/qcom/proprietary-open" />
+    
+    	<!-- Split system into multiple projects -->
+    	<remove-project name="platform/system/extras" />
+    	<project path="system/extras" name="cyanogen/android_system_extras" remote="github" />
+    
+    	<!-- Add Superuser -->
+        <project path="packages/apps/Superuser" name="cyanogen/android_packages_apps_Superuser" remote="github" />
+    
+    	<!-- Synchronization and other fixes -->
+    	<remove-project name="platform/frameworks/base" />
+    	<project path="frameworks/base" name="kiall/android_platform_frameworks_base" remote="github" />
+    
+    	<!-- Power button menu, etc. -->
+    	<remove-project name="platform/frameworks/policies/base" />
+    	<project path="frameworks/policies/base" name="kiall/android_platform_frameworks_policies_base" remote="github" />
+    
+    	<!-- Enhanced Launcher -->
+    	<remove-project name="platform/packages/apps/Launcher" />
+    	<project path="packages/apps/Launcher" name="cyanogen/android_packages_apps_Launcher" remote="github" />
+    
+    	<!-- Settings for widget fixes, etc. -->
+    	<remove-project name="platform/packages/apps/Settings" />
+    	<project path="packages/apps/Settings" name="kiall/android_packages_apps_Settings" remote="github" />
+    
+    	<!-- Community repo -->
+    	<project path="vendor/community" name="jnwhiteh/vendor_community_hero" remote="github" />
+    </manifest>
 
 2. Run `repo sync` to update the repositories
 
@@ -58,3 +62,6 @@ the 2.x rom should simply be named update-signed.zip.
   * Superuser.apk does not work properly
   * Brightness control in power control widget is not aligned correctly 
   * No dictionary is included in the LatinIME app
+
+
+[1]: http://github.com/cyanogen
