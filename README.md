@@ -22,7 +22,7 @@ the 2.x rom should simply be named update-signed.zip.
         <remove-project name="platform/vendor/qcom/android-open" />
         <remove-project name="platform/vendor/qcom/proprietary-open" />
     
-    	<!-- Split system into multiple projects -->
+    	<!-- Disable system/extras/su by pulling in a fork -->
     	<remove-project name="platform/system/extras" />
     	<project path="system/extras" name="cyanogen/android_system_extras" remote="github" />
     
@@ -32,15 +32,7 @@ the 2.x rom should simply be named update-signed.zip.
     	<!-- Synchronization and other fixes -->
     	<remove-project name="platform/frameworks/base" />
     	<project path="frameworks/base" name="kiall/android_platform_frameworks_base" remote="github" />
-    
-    	<!-- Power button menu, etc. -->
-    	<remove-project name="platform/frameworks/policies/base" />
-    	<project path="frameworks/policies/base" name="kiall/android_platform_frameworks_policies_base" remote="github" />
-    
-    	<!-- Enhanced Launcher -->
-    	<remove-project name="platform/packages/apps/Launcher" />
-    	<project path="packages/apps/Launcher" name="cyanogen/android_packages_apps_Launcher" remote="github" />
-    
+        
     	<!-- Settings for widget fixes, etc. -->
     	<remove-project name="platform/packages/apps/Settings" />
     	<project path="packages/apps/Settings" name="kiall/android_packages_apps_Settings" remote="github" />
