@@ -8,7 +8,7 @@ unzip -j -o ../../../$ZIP system/etc/AudioFilter.csv system/etc/AudioPara4.csv s
 touch proprietary/*
 
 (cd ../../htc/common-open/akmd && ./unzip-files.sh $ZIP)
-(cd ../../htc/prebuilt-open && ./unzip-files.sh signed-google_ion-ota-14721.zip)
+(cd ../../htc/prebuilt-open && ./unzip-files.sh $ZIP)
 #(cd ../../pv-open && ./unzip-files.sh $ZIP)
 (cd qcom/android-open/libopencorehw && ./unzip-files.sh $ZIP)
 (cd qcom/android-open/loc_api && ./unzip-files.sh $ZIP)
