@@ -1,3 +1,3 @@
-ifeq ($(TARGET_BOARD_PLATFORM),msm7k)
+ifeq ($(PRODUCT_DEVICE),salsa)
   include $(call all-subdir-makefiles)
 endif

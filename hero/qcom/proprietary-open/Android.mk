@@ -1,3 +1,3 @@
-ifeq ($(TARGET_BOARD_PLATFORM),msm7k)
+ifeq ($(PRODUCT_DEVICE),hero)
   include $(call all-subdir-makefiles)
 endif
