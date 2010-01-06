@@ -6,14 +6,15 @@ sysclktz 0
 loglevel 3
 
 # setup the global environment
-    export PATH /sbin:/system/sbin:/system/bin:/system/xbin
+    export PATH /bin:/sbin:/system/sbin:/system/xbin/bb:/system/bin:/system/xbin:/data/local/bin
     export LD_LIBRARY_PATH /system/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
     export ANDROID_DATA /data
     export EXTERNAL_STORAGE /sdcard
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/com.htc.framework.jar:/system/framework/com.htc.android.pimlib.jar:/system/framework/com.htc.android.easopen.jar:/system/framework/com.scalado.util.ScaladoUtil.jar
+    export PHONE_STORAGE /emmc
+    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar
 
 # Backward compatibility
     symlink /system/etc /etc
@@ -21,6 +22,7 @@ loglevel 3
 
 # create mountpoints and mount tmpfs on sqlite_stmt_journals
     mkdir /sdcard 0000 system system
+    mkdir /emmc 0000 system system
     mkdir /system
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
@@ -61,6 +63,9 @@ loglevel 3
     # Mount /system rw first to give the filesystem a chance to save a checkpoint
     mount yaffs2 mtd@system /system
     mount yaffs2 mtd@system /system ro remount
+
+    import /system/init.rc
+        trigger system
 
     # We chown/chmod /data again so because mount is run as root + defaults
     mount yaffs2 mtd@userdata /data nosuid nodev
@@ -114,12 +119,22 @@ loglevel 3
     mkdir /data/misc/wifi 0770 wifi wifi
     chmod 0770 /data/misc/wifi
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
+    mkdir /data/misc/wimax 0777 wimax wimax
+    mkdir /data/misc/wimax/sockets 0777  wimax wimax
+    mkdir /data/wimax/ 0777  wimax wimax
+    mkdir /data/wimax/log 0777  wimax wimax
     mkdir /data/local 0771 shell shell
     mkdir /data/local/tmp 0771 shell shell
     mkdir /data/data 0771 system system
     mkdir /data/app-private 0771 system system
     mkdir /data/app 0771 system system
     mkdir /data/property 0700 root root
+    # DRMv1 rights storage
+    symlink /data/local /data/drm
+    mkdir /data/local/rights 0777 shell shell
+    chown shell shell /data/drm
+    write /data/drm/rights/mid.txt 0
+    chmod 0777 /data/drm/rights/mid.txt
 
 
     # create dalvik-cache and double-check the perms
@@ -136,6 +151,11 @@ loglevel 3
     chmod 0770 /data/lost+found
     chown root root /cache/lost+found
     chmod 0770 /cache/lost+found
+
+    # create DRM directories
+    mkdir /data/DxDrm
+    mkdir /data/DxDrm/fuse
+    chmod 0777 /data/DxDrm    
 
 on boot
 # basic network init
@@ -167,6 +187,28 @@ on boot
     setprop ro.HIDDEN_APP_MEM 5120
     setprop ro.CONTENT_PROVIDER_MEM 5632
     setprop ro.EMPTY_APP_MEM 6144
+
+#Define parameters: Sprint_4_Customer_Equipment_General_Functional_Requirementsv1.0.4
+    setprop persist.wimax.STANDBY_TIME 600000
+    setprop persist.wimax.SCAN_RATE 1800000
+    setprop persist.wimax.Realm @sprintpcs.com
+    setprop persist.wimax.CenterFrequency 2647,2657,2667
+    setprop persist.wimax.Bandwidth 10,10,10
+    setprop persist.wimax.NAPIDS 000002
+    setprop persist.wimax.NSPIDS 000002 
+    setprop persist.wimax.Scan_Timeout 120000
+    setprop persist.wimax.Scan_Retry 180000
+    setprop persist.wimax.Idle_Sleep 10000
+    setprop persist.wimax.Entry_RX -87
+    setprop persist.wimax.Entry_CINR 6
+    setprop persist.wimax.Entry_Delay 600000
+    setprop persist.wimax.Exit_CINR 3
+    setprop persist.wimax.Exit_Delay 2000
+
+#ruu  
+    write /data/misc/screen_lock_status  0
+    chown system system /data/misc/screen_lock_status
+    chmod 644 /data/misc/screen_lock_status
 
 # Write value must be consistent with the above properties.
 # Note that the driver only supports 6 slots, so we have HOME_APP at the
@@ -201,9 +243,12 @@ on boot
     chown system system /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/jogball-backlight/brightness
+    chown system system /sys/class/leds/caps/brightness
+    chown system system /sys/class/leds/func/brightness
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/amber/brightness
     chown system system /sys/class/leds/red/device/grpfreq
     chown system system /sys/class/leds/red/device/grppwm
     chown system system /sys/class/leds/red/device/blink
@@ -213,6 +258,10 @@ on boot
     chown system system /sys/class/leds/red/device/grpfreq
     chown system system /sys/class/leds/red/device/grppwm
     chown system system /sys/class/leds/red/device/blink
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/green/off_timer
+    chown system system /sys/class/leds/amber/blink
+    chown system system /sys/class/leds/amber/off_timer
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/module/sco/parameters/disable_esco
     chown system system /sys/kernel/ipv4/tcp_wmem_min
@@ -230,7 +279,11 @@ on boot
     setprop net.tcp.buffersize.umts    4094,87380,110208,4096,16384,110208
     setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.wimax   4096,87380,110208,4096,16384,110208
 
+#start sysinit
+
+#on property:cm.filesystem.ready=1
     class_start default
 
 ## Daemon processes to be run by init.
@@ -270,9 +323,15 @@ service nexus /system/bin/nexus
 
 service debuggerd /system/bin/debuggerd
 
+service dmagent /system/bin/dmagent -N -P19 -VSY
+    socket dmagent stream 660 root radio
+    user root
+    group radio cache inet misc
+
 service ril-daemon /system/bin/rild
     socket rild stream 660 root radio
     socket rild-debug stream 660 radio system
+    socket rild-htc stream 660 radio system
     user root
     group radio cache inet misc audio
 
@@ -286,11 +345,6 @@ service media /system/bin/mediaserver
     user media
     group system audio camera graphics inet net_bt net_bt_admin
 
-service bootsound /system/bin/playmp3
-    user media
-    group audio
-    oneshot
-
 service bootanim /system/bin/bootanimation
     user graphics
     group graphics
@@ -298,9 +352,19 @@ service bootanim /system/bin/bootanimation
     oneshot
 
 service dbus /system/bin/dbus-daemon --system --nofork
-    socket dbus stream 660 bluetooth bluetooth
+    socket dbus stream 666 bluetooth bluetooth
     user bluetooth
     group bluetooth net_bt_admin
+
+# Make sure we startup btld before hcid
+# Set target address to emulator host loopback IF
+# Limit baudrate to 460800 to ensure reliable uart operation 
+#service btld /system/bin/logwrapper /system/bin/btld -hwtun 10.0.2.2 -hb 460800 3000000 -lpm 1
+service btld /system/bin/logwrapper /system/bin/btld -lpm 1 -hb 3000000
+    user root
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
 service bluetoothd /system/bin/bluetoothd -n
     socket bluetooth stream 660 bluetooth bluetooth
@@ -309,6 +373,25 @@ service bluetoothd /system/bin/bluetoothd -n
     # let bluetoothd drop uid to bluetooth with the right linux capabilities
     group bluetooth net_bt_admin misc
     disabled
+
+#service chownThpWimax /system/bin/chownThp wimax /dev/thp
+#    user root
+#    group root
+#    disabled
+#    oneshot
+
+service chownThpRoot /system/bin/chownThp root /dev/thp
+    user root
+    group root
+    disabled
+    oneshot
+
+#service sequansd /system/bin/sequansd /etc/wimax/sequansd/sequansd_app.xml
+#    user wimax
+#    group wimax inet
+#    socket sequansd_0 dgram 660 wimax wimax
+#    disabled
+#    oneshot
 
 service hfag /system/bin/sdptool add --channel=10 HFAG
     user bluetooth
@@ -340,6 +423,10 @@ service installd /system/bin/installd
 service flash_recovery /system/etc/install-recovery.sh
     oneshot
 
+#service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+#    disabled
+#    oneshot
+
 service racoon /system/bin/racoon
     socket racoon stream 600 system system
     # racoon will setuid to vpn after getting necessary resources.
@@ -363,3 +450,9 @@ service dumpstate /system/bin/dumpstate -s
     socket dumpstate stream 0660 shell log
     disabled
     oneshot
+
+# Discretix DRM change start
+service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/fuse
+    oneshot
+# Discretix DRM change end
+
