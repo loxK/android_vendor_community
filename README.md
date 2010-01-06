@@ -1,13 +1,20 @@
-# HTC Hero Community vendor tree
+# Community vendor tree
 
 This is a vendor tree that allows developers to compile Android 2.0 (eclair)
-for HTC Hero devices.  It is based off work by [cyanogen][1], lox, kiall and
+for some devices.  It is based off work by [cyanogen][1], [lox][2], kiall and
 jnwhiteh and can be used as a base for custom ROMS.
 
-In order to compile using this source, you must have a 2.x ROM for Hero, along
-with the google-ion 1.6 ota image from HTC (currently hardcoded as
-`signed-google_ion-ota-14721.zip`).  Both ROMS should be at your AOSP root and
-the 2.x rom should simply be named update-signed.zip.
+Currently supported devices are
+- HTC Hero
+- Acer Liquid (in progress)
+
+In order to compile using this source, you must have a 2.x ROM for your device
+with the correct name:
+
+- update-hero.zip for HTC Hero
+- update-liquid.zip for Acer Liquid
+ 
+The ROMS should be at your AOSP root.
 
 # Usage instructions
 
@@ -42,22 +49,23 @@ the 2.x rom should simply be named update-signed.zip.
     	<project path="packages/apps/Settings" name="kiall/android_packages_apps_Settings" remote="github" />
     
     	<!-- Community repo -->
-    	<project path="vendor/community" name="jnwhiteh/vendor_community_hero" remote="github" />
+    	<project path="vendor/community" name="loxK/android_vendor_community" remote="github" />
     </manifest>
 
 2. Run `repo sync` to update the repositories
 
-3. Run `pushd vendor/community/hero && ./unzip-files.sh && popd`
- to unzip proprietary files from existing roms.  Note that this step requires you to have two files in your AOSP root directory:
-
-  * `update-signed.zip` (this should be a HERO21 or KaguDroid ROM)
-  * `signed-google_ion-ota-14721.zip` 
+3. Run `pushd vendor/community/<device> && ./unzip-files.sh && popd`
+ to unzip proprietary files from existing roms.
 
 4. . Run `. build/envsetup.sh` to setup your build environment
 
-5. Run `lunch community_hero-eng` to select the right configuration
+5. Run `lunch <combo>` to select the right configuration
 
-# Known issues
+Available combos:
+- community_hero-eng
+- community_liquid-eng
+
+# Known global issues
 
   * Currently make otapackage does not work properly and does not produce a usable zip.  A patch exists to get close, but I'm not comfortable with the hacky changes I've made so far.
   * Brightness control in power control widget is not aligned correctly 
@@ -65,3 +73,4 @@ the 2.x rom should simply be named update-signed.zip.
 
 
 [1]: http://github.com/cyanogen
+[2]: http://github.com/loxK/android_vendor_lox
