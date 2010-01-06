@@ -5,6 +5,7 @@ for some devices.  It is based off work by [cyanogen][1], [lox][2], kiall and
 jnwhiteh and can be used as a base for custom ROMS.
 
 Currently supported devices are
+
 - HTC Hero
 - Acer Liquid (in progress)
 
