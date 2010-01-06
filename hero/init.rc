@@ -281,7 +281,7 @@ on boot
     setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
     setprop net.tcp.buffersize.wimax   4096,87380,110208,4096,16384,110208
 
-#start sysinit
+start sysinit
 
 #on property:cm.filesystem.ready=1
     class_start default
@@ -423,9 +423,9 @@ service installd /system/bin/installd
 service flash_recovery /system/etc/install-recovery.sh
     oneshot
 
-#service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
-#    disabled
-#    oneshot
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+    disabled
+    oneshot
 
 service racoon /system/bin/racoon
     socket racoon stream 600 system system
