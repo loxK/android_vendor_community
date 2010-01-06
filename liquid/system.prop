@@ -1,0 +1,26 @@
+#
+# system.prop for hero 
+#
+
+rild.libpath=/system/lib/libril-acer-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+wifi.interface=eth0
+persist.cust.tel.eons=1
+persist.ril.ecclist=000,08,110,112,118,119,911,999
+persist.rild.autopinenabled=1
+
+# Market fix
+ro.build.changelist=
+ro.build.modelid=HERO*****
+ro.product.ua=
+ro.build.fingerprint=verizon/voles/sholes/sholes:2.0/ESD20/17572:user/ota-rel-keys,release-keys
+ro.product.version=

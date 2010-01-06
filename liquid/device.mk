@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2009 The Android Open Source Project
+# Copyright (C) 2009 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,14 +14,10 @@
 # limitations under the License.
 #
 
-# This file is executed by build/envsetup.sh, and can use anything
-# defined in envsetup.sh.
-#
-# In particular, you can add lunch options with the add_lunch_combo
-# function: add_lunch_combo generic-eng
+# To be included directly by a product makefile; do not use inherit-product.
 
-add_lunch_combo community_hero-userdebug
-add_lunch_combo community_hero-eng
+PRODUCT_COPY_FILES += \
+	vendor/lox/liquid/proprietary/gps.conf:system/etc/gps.conf
 
-add_lunch_combo community_liquid-userdebug
-add_lunch_combo community_liquid-eng
+DEVICE_PACKAGE_OVERLAYS := vendor/lox/liquid/overlay
+
