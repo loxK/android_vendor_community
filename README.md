@@ -26,9 +26,13 @@ the 2.x rom should simply be named update-signed.zip.
     	<remove-project name="platform/system/extras" />
     	<project path="system/extras" name="cyanogen/android_system_extras" remote="github" />
     
-    	<!-- Add Superuser -->
+        <!-- Add Superuser -->
         <project path="packages/apps/Superuser" name="cyanogen/android_packages_apps_Superuser" remote="github" />
-    
+
+        <!-- init.d filesystem fix, etc. -->
+        <remove-project name="platform/system/core" />
+        <project path="system/core" name="jnwhiteh/android_system_core" remote="github" />
+
     	<!-- Synchronization and other fixes -->
     	<remove-project name="platform/frameworks/base" />
     	<project path="frameworks/base" name="kiall/android_platform_frameworks_base" remote="github" />
