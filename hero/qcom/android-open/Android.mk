@@ -13,6 +13,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-ifeq ($(PRODUCT_DEVICE),hero)
+ifeq ($(TARGET_DEVICE),hero)
   include $(all-subdir-makefiles)
 endif
