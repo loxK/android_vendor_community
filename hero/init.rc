@@ -283,7 +283,7 @@ on boot
 
 start sysinit
 
-#on property:cm.filesystem.ready=1
+on property:cm.filesystem.ready=1
     class_start default
 
 ## Daemon processes to be run by init.
