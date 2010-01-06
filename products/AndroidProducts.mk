@@ -26,4 +26,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/community_hero.mk
+    $(LOCAL_DIR)/community_hero.mk \
+    $(LOCAL_DIR)/community_liquid.mk
