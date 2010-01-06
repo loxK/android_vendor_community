@@ -17,7 +17,7 @@
 # To be included directly by a product makefile; do not use inherit-product.
 
 PRODUCT_COPY_FILES += \
-	vendor/lox/liquid/proprietary/gps.conf:system/etc/gps.conf
+	vendor/community/liquid/proprietary/gps.conf:system/etc/gps.conf
 
-DEVICE_PACKAGE_OVERLAYS := vendor/lox/liquid/overlay
+DEVICE_PACKAGE_OVERLAYS := vendor/community/liquid/overlay
 

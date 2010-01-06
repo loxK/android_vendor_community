@@ -16,23 +16,23 @@
 
 # This is the top-level configuration for a US-configured loxMod build
 
-$(call inherit-product, vendor/lox/products/core.mk)
+$(call inherit-product, vendor/community/products/core.mk)
 
-PRODUCT_NAME := lox_liquid
+PRODUCT_NAME := community_liquid
 
 # Which actual hardware this is based on (this is a path under vendor/)
 PRODUCT_MANUFACTURER := htc
 PRODUCT_DEVICE := salsa
 
 # The user-visible product name
-PRODUCT_MODEL := KaguDroid
+PRODUCT_MODEL := AOSP Salsa
 
 TARGET_BUILD_TYPE := release
 
-PRODUCT_PACKAGE_OVERLAYS := vendor/lox/overlay
+PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 
 # Pick up some liquid settings (gps and voice settings).
-include vendor/lox/liquid/device.mk
+include vendor/community/liquid/device.mk
 
 # Pick up some sounds
 include frameworks/base/data/sounds/AudioPackage2.mk
