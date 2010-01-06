@@ -22,3 +22,6 @@
 
 add_lunch_combo community_hero-userdebug
 add_lunch_combo community_hero-eng
+
+add_lunch_combo community_liquid-userdebug
+add_lunch_combo community_liquid-eng
