@@ -62,6 +62,7 @@ The ROMS should be at your AOSP root.
 5. Run `lunch <combo>` to select the right configuration
 
 Available combos:
+
 - community_hero-eng
 - community_liquid-eng
 
