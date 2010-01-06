@@ -75,7 +75,6 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
 	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
-	vendor/community/xbin/busybox:system/xbin/busybox \
 	vendor/community/etc/permissions/com.google.android.datamessaging.xml:system/etc/permissions/com.google.android.datamessaging.xml \
 	vendor/community/etc/permissions/com.google.android.gtalkservice.xml:system/etc/permissions/com.google.android.gtalkservice.xml \
 	vendor/community/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
