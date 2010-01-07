@@ -5,7 +5,7 @@
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#	  http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,51 +20,51 @@ $(call inherit-product, build/target/product/generic.mk)
 
 # This is the list of apps included in the build
 PRODUCT_PACKAGES := \
-    AlarmClock \
-    AlarmProvider \
-    ApplicationsProvider \
-    Browser \
-    Bugreport \
-    Calculator \
-    Calendar \
-    CalendarProvider \
-    Camera \
-    Contacts \
-    ContactsProvider \
-    DownloadProvider \
-    DrmProvider \
-    Email \
-    FieldTest \
-    GlobalSearch \
-    GoogleSearch \
-    HTMLViewer \
-    LatinIME \
-    Launcher \
-    MediaProvider \
-    Mms \
-    Music \
-    IM \
-    IMProvider \
-    PackageInstaller \
-    Phone \
-    PicoTts \
-    Settings \
-    SettingsProvider \
-    SoundRecorder \
-    SubscribedFeedsProvider \
-    Sync \
-    SyncProvider \
-    TelephonyProvider \
-    TtsService \
-    Updater \
-    UserDictionaryProvider \
-    VoiceDialer \
-    VpnServices \
-    WebSearchProvider \
-    framework-res \
-    Stk \
-    Updater \
-    Superuser
+	AlarmClock \
+	AlarmProvider \
+	ApplicationsProvider \
+	Browser \
+	Bugreport \
+	Calculator \
+	Calendar \
+	CalendarProvider \
+	Camera \
+	Contacts \
+	ContactsProvider \
+	DownloadProvider \
+	DrmProvider \
+	Email \
+	FieldTest \
+	GlobalSearch \
+	GoogleSearch \
+	HTMLViewer \
+	LatinIME \
+	Launcher \
+	MediaProvider \
+	Mms \
+	Music \
+	IM \
+	IMProvider \
+	PackageInstaller \
+	Phone \
+	PicoTts \
+	Settings \
+	SettingsProvider \
+	SoundRecorder \
+	SubscribedFeedsProvider \
+	Sync \
+	SyncProvider \
+	TelephonyProvider \
+	TtsService \
+	Updater \
+	UserDictionaryProvider \
+	VoiceDialer \
+	VpnServices \
+	WebSearchProvider \
+	framework-res \
+	Stk \
+	Updater \
+	Superuser
 
 PRODUCT_COPY_FILES += \
 	vendor/community/app/MarketEnabler.apk:system/app/MarketEnabler.apk \
@@ -79,7 +79,7 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/permissions/com.google.android.gtalkservice.xml:system/etc/permissions/com.google.android.gtalkservice.xml \
 	vendor/community/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
 	vendor/community/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
-   		      
+   			  
 # This is the list of locales included in AOSP builds
 PRODUCT_LOCALES := \
 	ar_EG \
@@ -143,13 +143,13 @@ PRODUCT_LOCALES := \
 
 # Additional settings used in all builds
 PRODUCT_PROPERTY_OVERRIDES += \
-        keyguard.no_require_sim=true
+	keyguard.no_require_sim=true
 
 # eu settings
 PRODUCT_PROPERTY_OVERRIDES += \
-        ro.config.notification_sound=pizzicato.ogg \
-        ro.config.alarm_alert=Big_Easy.ogg \
-		ro.com.android.dateformat=dd-MM-yyyy \
-        ro.com.android.dataroaming=true \
-        ro.ril.hsxpa=1 \
-        ro.ril.gprsclass=10
+	ro.config.notification_sound=pizzicato.ogg \
+	ro.config.alarm_alert=Big_Easy.ogg \
+	ro.com.android.dateformat=dd-MM-yyyy \
+	ro.com.android.dataroaming=true \
+	ro.ril.hsxpa=1 \
+	ro.ril.gprsclass=10

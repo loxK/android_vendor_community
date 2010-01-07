@@ -17,11 +17,11 @@
 # To be included directly by a product makefile; do not use inherit-product.
 
 PRODUCT_COPY_FILES += \
-        vendor/community/hero/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
+	vendor/community/hero/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
 	vendor/community/hero/proprietary/gps.conf:system/etc/gps.conf
 
 DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
 
 PRODUCT_PACKAGES += \
-        FieldTest
+	FieldTest
 
