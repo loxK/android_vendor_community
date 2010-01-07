@@ -214,4 +214,6 @@
   <apn carrier="Wind WEB" mcc="222" mnc="88" apn="internet.wind" user="none" password="none" server="*" mmsproxy="" mmsport="" mmsc=""/>
   <apn carrier="Yesss" apn="web.yesss.at" proxy="" port="" user="" password="" server="" mmsc="" mmsproxy="" mmsport="" mcc="232" mnc="12" type=""/>
   <apn carrier="Yesss" mcc="232" mnc="12" apn="web.yesss.at"/>
+  <apn carrier="Meteor IE" mcc="272" mnc="03" apn="data.mymeteor.ie" type="default"/>
+  <apn carrier="Meteor IE MMS" mcc="272" mnc="03" apn="mms.mymeteor.ie" type="mms" proxy="10.85.85.85" port="8799" mmsproxy="10.85.85.85" mmsport="8799" user="my" password="mms" mmsc="http://mms.mymeteor.ie"/>
 </apns>
