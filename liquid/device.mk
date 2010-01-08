@@ -19,5 +19,5 @@
 PRODUCT_COPY_FILES += \
 	vendor/community/liquid/proprietary/gps.conf:system/etc/gps.conf
 
-DEVICE_PACKAGE_OVERLAYS := vendor/community/liquid/overlay vendor/community/overlay
+DEVICE_PACKAGE_OVERLAYS := vendor/community/liquid/overlay
 

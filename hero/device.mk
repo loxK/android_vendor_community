@@ -20,7 +20,7 @@ PRODUCT_COPY_FILES += \
 	vendor/community/hero/proprietary/AudioPara4.csv:system/etc/AudioPara4.csv \
 	vendor/community/hero/proprietary/gps.conf:system/etc/gps.conf
 
-DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay vendor/community/overlay
+DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
 
 PRODUCT_PACKAGES += \
 	FieldTest
