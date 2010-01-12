@@ -67,13 +67,16 @@ PRODUCT_PACKAGES := \
 	Superuser
 
 PRODUCT_COPY_FILES += \
+	vendor/community/xbin/apps2sd:system/xbin/apps2sd \
 	vendor/community/app/MarketEnabler.apk:system/app/MarketEnabler.apk \
 	vendor/community/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	vendor/community/etc/sysctl.conf:system/etc/sysctl.conf \
 	vendor/community/etc/fstab:system/etc/fstab \
 	vendor/community/etc/init.d/00banner:system/etc/init.d/00banner \
+	vendor/community/etc/init.d/01sysctl:system/etc/init.d/001settings \
 	vendor/community/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+	vendor/community/etc/init.d/03firstboot:system/etc/init.d/04apps2sd \
 	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
 	vendor/community/etc/permissions/com.google.android.datamessaging.xml:system/etc/permissions/com.google.android.datamessaging.xml \
 	vendor/community/etc/permissions/com.google.android.gtalkservice.xml:system/etc/permissions/com.google.android.gtalkservice.xml \
