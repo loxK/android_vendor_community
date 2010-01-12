@@ -1,0 +1,30 @@
+#!/system/bin/sh
+#
+# Enable Apps2SD
+
+if [ -z $1 ]; then
+        echo "Needs 'on' or 'off' as argument.";
+        exit 1;
+fi;
+
+if [ $1 != "on" ]  &&  [ $1 != "off" ]; then
+        echo "Needs 'on' or 'off' as argument.";
+        exit 1;
+fi;
+
+
+if [ $1 = "on" ]; then
+        echo "Enabling apps2sd.";
+        REP="0/1"
+else
+        echo "Disabling apps2sd.";
+        REP="1/0";
+fi;
+
+FNAME="system/etc/init.d/001settings";
+
+sed "/cm.a2sd.enabled/ s/$REP/" "$FNAME" > "$FNAME.tmp";
+mv "$FNAME.tmp" $FNAME;
+chmod 755 $FNAME;
+echo "Done. Please reboot.";
+
