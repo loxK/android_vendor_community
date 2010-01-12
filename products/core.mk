@@ -85,6 +85,17 @@ PRODUCT_COPY_FILES += \
    			  
 # This is the list of locales included in AOSP builds
 PRODUCT_LOCALES := \
+	en_US \
+	en_AU \
+	en_CA \
+	en_GB \
+	en_IE \
+	en_IN \
+	en_NZ \
+	en_SG \
+	en_ZA \
+	es_ES \
+	es_US \
 	ar_EG \
 	ar_IL \
 	bg_BG \
@@ -96,17 +107,6 @@ PRODUCT_LOCALES := \
 	de_DE \
 	de_LI \
 	el_GR \
-	en_AU \
-	en_CA \
-	en_GB \
-	en_IE \
-	en_IN \
-	en_NZ \
-	en_SG \
-	en_US \
-	en_ZA \
-	es_ES \
-	es_US \
 	fi_FI \
 	fr_BE \
 	fr_CA \
