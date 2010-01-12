@@ -1,0 +1,5 @@
+#!/system/bin/sh
+#
+# Define settings
+
+setprop cm.a2sd.enabled 0;
