@@ -76,7 +76,7 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/init.d/01settings:system/etc/init.d/01settings \
 	vendor/community/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-	vendor/community/etc/init.d/03firstboot:system/etc/init.d/04apps2sd \
+	vendor/community/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
 	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
 	vendor/community/etc/permissions/com.google.android.datamessaging.xml:system/etc/permissions/com.google.android.datamessaging.xml \
 	vendor/community/etc/permissions/com.google.android.gtalkservice.xml:system/etc/permissions/com.google.android.gtalkservice.xml \
