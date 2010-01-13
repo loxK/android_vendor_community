@@ -21,7 +21,7 @@ else
         REP="1/0";
 fi;
 
-FNAME="system/etc/init.d/001settings";
+FNAME="system/etc/init.d/01settings";
 
 sed "/cm.a2sd.enabled/ s/$REP/" "$FNAME" > "$FNAME.tmp";
 mv "$FNAME.tmp" $FNAME;
