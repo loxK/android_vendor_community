@@ -156,6 +156,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.com.android.dataroaming=true \
 	ro.ril.hsxpa=1 \
 	ro.ril.gprsclass=10
-
-# Market Fix - This needs testing as I live ouside a paid apps area... MarketEnabler is required for me...
-BUILD_FINGERPRINT := "verizon/voles/sholes/sholes:2.0/ESD20/17572:user/ota-rel-keys,release-keys"
