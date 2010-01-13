@@ -73,8 +73,8 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/sysctl.conf:system/etc/sysctl.conf \
 	vendor/community/etc/fstab:system/etc/fstab \
 	vendor/community/etc/init.d/00banner:system/etc/init.d/00banner \
-	vendor/community/etc/init.d/01sysctl:system/etc/init.d/001settings \
-	vendor/community/etc/init.d/01sysctl:system/etc/init.d/01sysctl \
+	vendor/community/etc/init.d/01settings:system/etc/init.d/01settings \
+	vendor/community/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/04apps2sd \
 	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
