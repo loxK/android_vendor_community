@@ -20,8 +20,10 @@
 # In particular, you can add lunch options with the add_lunch_combo
 # function: add_lunch_combo generic-eng
 
+add_lunch_combo community_hero-user
 add_lunch_combo community_hero-userdebug
 add_lunch_combo community_hero-eng
 
+add_lunch_combo community_liquid-user
 add_lunch_combo community_liquid-userdebug
 add_lunch_combo community_liquid-eng
