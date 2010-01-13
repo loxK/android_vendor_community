@@ -25,3 +25,5 @@ DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
 PRODUCT_PACKAGES += \
 	FieldTest
 
+# Market Fix
+BUILD_FINGERPRINT := "google/passion/passion/mahimahi:2.1/ERD79/22607:user/release-keys"
