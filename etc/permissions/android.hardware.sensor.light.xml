@@ -16,6 +16,5 @@
 
 <!-- Feature for devices with an ambient light sensor. -->
 <permissions>
-    <assign-permission name="android.permission.WAKE_LOCK" uid="10009"/>
-    <assign-permission name="com.google.android.providers.talk.permission.READ_ONLY" uid="10029"/>
+    <feature name="android.hardware.sensor.light" />
 </permissions>
