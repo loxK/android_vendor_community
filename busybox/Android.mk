@@ -201,13 +201,13 @@ TOOLS := \
        yes \
        zcat
 
-SYMLINKS := $(addprefix $(TARGET_OUT)/xbin/,$(TOOLS))
+SYMLINKS := $(addprefix $(TARGET_OUT)/xbin/bb/,$(TOOLS))
 $(SYMLINKS): BUSYBOX_BINARY := $(LOCAL_MODULE)
 $(SYMLINKS): $(LOCAL_INSTALLED_MODULE) $(LOCAL_PATH)/Android.mk
-	@echo "Symlink: $@ -> $(BUSYBOX_BINARY)"
+	@echo "Symlink: $@ -> ../$(BUSYBOX_BINARY)"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf $(BUSYBOX_BINARY) $@
+	$(hide) ln -sf../ $(BUSYBOX_BINARY) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS)
 
