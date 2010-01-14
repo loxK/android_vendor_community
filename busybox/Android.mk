@@ -207,7 +207,7 @@ $(SYMLINKS): $(LOCAL_INSTALLED_MODULE) $(LOCAL_PATH)/Android.mk
 	@echo "Symlink: $@ -> ../$(BUSYBOX_BINARY)"
 	@mkdir -p $(dir $@)
 	@rm -rf $@
-	$(hide) ln -sf../ $(BUSYBOX_BINARY) $@
+	$(hide) ln -sf ../$(BUSYBOX_BINARY) $@
 
 ALL_DEFAULT_INSTALLED_MODULES += $(SYMLINKS)
 
