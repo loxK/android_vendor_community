@@ -2,7 +2,11 @@
 
 mkdir -p proprietary/google
 
-ZIP=$1
+if [ -z "$1" ]; then
+	ZIP="update-hero.zip"
+else
+    ZIP=$1
+fi
 
 unzip -j -d proprietary/google -o ../../../$ZIP \
 	system/app/com.cooliris.media.apk \

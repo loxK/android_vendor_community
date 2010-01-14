@@ -2,9 +2,13 @@
 
 mkdir -p proprietary
 
-ZIP=$1
+if [ -z "$1" ]; then
+	ZIP="update-hero.zip"
+else
+    ZIP=$1
+fi
 
-unzip -j -d proprietary -o ../../../$1 \
+unzip -j -d proprietary -o ../../../$ZIP \
 	system/etc/AudioFilter.csv \
 	system/etc/AudioPara4.csv \
 	system/etc/AudioPreProcess.csv \
