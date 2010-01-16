@@ -22,7 +22,7 @@ PRODUCT_NAME := community_liquid
 
 # Which actual hardware this is based on (this is a path under vendor/)
 PRODUCT_MANUFACTURER := htc
-PRODUCT_DEVICE := salsa
+PRODUCT_DEVICE := liquid
 
 # The user-visible product name
 PRODUCT_MODEL := AOSP Salsa
