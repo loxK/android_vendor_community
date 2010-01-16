@@ -9,13 +9,8 @@ Currently supported devices are
 - HTC Hero
 - Acer Liquid (in progress)
 
-See device specific readme for your device.
-
-# Known global issues
-
-  * Currently make otapackage does not work properly and does not produce a usable zip.  A patch exists to get close, but I'm not comfortable with the hacky changes I've made so far.
-  * Brightness control in power control widget is not aligned correctly 
-  * No dictionary is included in the LatinIME app
+Please read the wiki for further instructions [3]
 
 [1]: http://github.com/cyanogen
 [2]: http://github.com/loxK/android_vendor_lox
+[3]: http://wiki.github.com/loxK/android_vendor_community/
