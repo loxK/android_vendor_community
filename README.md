@@ -9,7 +9,7 @@ Currently supported devices are
 - HTC Hero
 - Acer Liquid (in progress)
 
-Please read the wiki for further instructions [3]
+[Please read the wiki for further instructions][3]
 
 [1]: http://github.com/cyanogen
 [2]: http://github.com/loxK/android_vendor_lox
