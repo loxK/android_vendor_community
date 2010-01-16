@@ -8,6 +8,9 @@ LOCAL_MODULE_CLASS := OPTIONAL_EXECUTABLES
 
 include $(BUILD_PREBUILT)
 
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/placeholder:system/xbin/bb/placeholder
+
 TOOLS := \
        [ \
        [[ \
