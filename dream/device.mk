@@ -18,10 +18,21 @@
 # do not use inherit-product on this file.
 
 PRODUCT_COPY_FILES += \
-        vendor/htc/dream-open/proprietary/AudioPara4_EU.csv:system/etc/AudioPara4.csv \
-        vendor/htc/dream-open/proprietary/gps.conf_EU:system/etc/gps.conf
+        vendor/community/dream/AudioPara4_EU.csv:system/etc/AudioPara4.csv \
+        vendor/community/dream/gps.conf_EU:system/etc/gps.conf
 
-DEVICE_PACKAGE_OVERLAYS := vendor/htc/dream-open/overlay vendor/htc/common-open/overlay
+# Extra permissions
+PRODUCT_COPY_FILES += \
+        vendor/community/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+        vendor/community/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+        vendor/community/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+        vendor/community/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+
+DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
 
 PRODUCT_PACKAGES += \
         FieldTest
+
+# Market Fix
+BUILD_FINGERPRINT := "google/passion/passion/mahimahi:2.1/ERD79/22607:user/release-keys"
+
