@@ -27,3 +27,7 @@ add_lunch_combo community_hero-eng
 add_lunch_combo community_liquid-user
 add_lunch_combo community_liquid-userdebug
 add_lunch_combo community_liquid-eng
+
+add_lunch_combo community_dream-user
+add_lunch_combo community_dream-userdebug
+add_lunch_combo community_dream-eng
