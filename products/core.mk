@@ -20,7 +20,6 @@ $(call inherit-product, build/target/product/generic.mk)
 
 # This is the list of apps included in the build
 PRODUCT_PACKAGES := \
-	AccountAndSyncSettings \
 	AlarmClock \
 	AlarmProvider \
 	ApplicationsProvider \
