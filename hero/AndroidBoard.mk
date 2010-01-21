@@ -71,15 +71,7 @@ $(file) : $(LOCAL_PATH)/init.hero.rc | $(ACP)
 	$(transform-prebuilt-to-target)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := sensors.hero.so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/hw
-LOCAL_SRC_FILES := proprietary/$(LOCAL_MODULE)
-OVERRIDE_BUILT_MODULE_PATH := $(TARGET_OUT_INTERMEDIATE_LIBRARIES)/hw
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_SRC_FILES := hero-keypad.kcm
+LOCAL_SRC_FILES := prebuilt/hero-keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
 
 # egl
