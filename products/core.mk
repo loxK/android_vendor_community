@@ -177,3 +177,15 @@ include external/svox/pico/lang/PicoLangEnUsInSystem.mk
 include external/svox/pico/lang/PicoLangEsEsInSystem.mk
 include external/svox/pico/lang/PicoLangFrFrInSystem.mk
 include external/svox/pico/lang/PicoLangItItInSystem.mk
+
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html \
+  ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html \
+  ro.com.google.networklocation=1 \
+  ro.setupwizard.mode=DISABLED \
+  ro.config.ringtone=Big_Easy.ogg \
+  ro.setupwizard.mode=OPTIONAL \
+  dalvik.vm.dexopt-flags=m=y
