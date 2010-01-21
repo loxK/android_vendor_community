@@ -22,17 +22,5 @@ PRODUCT_COPY_FILES += \
 	vendor/community/hero/proprietary/AudioPreProcess.csv:system/etc/AudioPreProcess.csv \
 	vendor/community/hero/proprietary/gps.conf:system/etc/gps.conf
 
-# Extra permissions
-PRODUCT_COPY_FILES += \
-	vendor/community/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-	vendor/community/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	vendor/community/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	vendor/community/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
-
-DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
-
-PRODUCT_PACKAGES += \
-	FieldTest
-
 # Market Fix
 BUILD_FINGERPRINT := "google/passion/passion/mahimahi:2.1/ERD79/22607:user/release-keys"
