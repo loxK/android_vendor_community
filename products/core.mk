@@ -16,55 +16,67 @@
 
 # This is the config file for an actual configuration on HTC hero
 
-$(call inherit-product, build/target/product/generic.mk)
+ifeq ($(PRODUCT_REGION_EU),true)
+$(call inherit-product, vendor/aosp/products/aosp_eu.mk)
+else
+$(call inherit-product, vendor/aosp/products/aosp_us.mk)
+endif
 
 # This is the list of apps included in the build
 PRODUCT_PACKAGES := \
-	AlarmClock \
-	AlarmProvider \
-	ApplicationsProvider \
-	Browser \
-	Bugreport \
-	Calculator \
-	Calendar \
-	CalendarProvider \
-	Camera \
-	Contacts \
-	ContactsProvider \
-	DownloadProvider \
-	DrmProvider \
-	Email \
-	FieldTest \
-	GlobalSearch \
-	GoogleSearch \
-	HTMLViewer \
-	LatinIME \
-	Launcher \
-	MediaProvider \
-	Mms \
-	Music \
+	AccountAndSyncSettings \
+    AlarmProvider \
+    ApplicationsProvider \
+    Browser \
+    Bugreport \
+    Calculator \
+    Calendar \
+    CalendarProvider \
+    Camera \
+    Contacts \
+    ContactsProvider \
+	CubeLiveWallpaper \
+	DeskClock \
+    DownloadProvider \
+    DrmProvider \
+    Email \
+    FieldTest \
+	Gallery3D \
+    GlobalSearch \
+    GoogleSearch \
+    HTMLViewer \
 	IM \
 	IMProvider \
-	PackageInstaller \
-	Phone \
-	PicoTts \
-	Settings \
-	SettingsProvider \
-	SoundRecorder \
-	SubscribedFeedsProvider \
-	Sync \
-	SyncProvider \
-	TelephonyProvider \
-	TtsService \
-	Updater \
-	UserDictionaryProvider \
-	VoiceDialer \
-	VpnServices \
-	WebSearchProvider \
-	framework-res \
+    LatinIME \
+    Launcher \
+	LiveWallpapers \
+	LiveWallpapersPicker \
+	MagicSmokeWallpapers \
+    MediaProvider \
+    Mms \
+    Music \
+    PackageInstaller \
+    Phone \
+    PicoTts \
+    Settings \
+    SettingsProvider \
+    SoundRecorder \
 	Stk \
-	Updater \
-	Superuser
+    SubscribedFeedsProvider \
+	Superuser \
+    Sync \
+    SyncProvider \
+    TelephonyProvider \
+    TtsService \
+    Updater \
+    UserDictionaryProvider \
+	VisualizationWallpapers \
+    VoiceDialer \
+    VpnServices \
+    WebSearchProvider \
+    framework-res \
+	libRS \
+	librs_jni
 
 PRODUCT_COPY_FILES += \
 	vendor/community/xbin/apps2sd:system/xbin/apps2sd \
@@ -89,6 +101,8 @@ PRODUCT_COPY_FILES += \
    			  
 # This is the list of locales included in AOSP builds
 PRODUCT_LOCALES := \
+	mdpi \
+	hdpi \
 	en_US \
 	en_AU \
 	en_CA \
