@@ -148,15 +148,13 @@ PRODUCT_LOCALES := \
 	zh_CN \
 	zh_TW
 
-# Additional settings used in all builds
-PRODUCT_PROPERTY_OVERRIDES += \
-	keyguard.no_require_sim=true
+# Pick up some sounds
+include frameworks/base/data/sounds/AudioPackage2.mk
 
-# eu settings
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.config.notification_sound=pizzicato.ogg \
-	ro.config.alarm_alert=Big_Easy.ogg \
-	ro.com.android.dateformat=dd-MM-yyyy \
-	ro.com.android.dataroaming=true \
-	ro.ril.hsxpa=1 \
-	ro.ril.gprsclass=10
+# TTS languages
+include external/svox/pico/lang/PicoLangDeDeInSystem.mk
+include external/svox/pico/lang/PicoLangEnGBInSystem.mk
+include external/svox/pico/lang/PicoLangEnUsInSystem.mk
+include external/svox/pico/lang/PicoLangEsEsInSystem.mk
+include external/svox/pico/lang/PicoLangFrFrInSystem.mk
+include external/svox/pico/lang/PicoLangItItInSystem.mk
