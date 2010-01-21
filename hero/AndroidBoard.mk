@@ -1,7 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/kernel
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 endif
 
 file := $(INSTALLED_KERNEL_TARGET)
@@ -26,12 +26,12 @@ $(file) : $(LOCAL_PATH)/proprietary/hero-keypad.kcm.bin | $(ACP)
 
 file := $(TARGET_OUT_KEYLAYOUT)/hero-keypad.kl
 ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/hero-keypad.kl | $(ACP)
+$(file) : $(LOCAL_PATH)/prebuilt/hero-keypad.kl | $(ACP)
 	$(transform-prebuilt-to-target)
 
 file := $(TARGET_OUT_KEYLAYOUT)/h2w_headset.kl
 ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/h2w_headset.kl | $(ACP)
+$(file) : $(LOCAL_PATH)/prebuilt/h2w_headset.kl | $(ACP)
 	$(transform-prebuilt-to-target)
 
 file := $(TARGET_OUT)/etc/firmware/avpr.bts
@@ -69,14 +69,6 @@ file := $(TARGET_ROOT_OUT)/init.hero.rc
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/init.hero.rc | $(ACP)
 	$(transform-prebuilt-to-target)
-
-#file := $(TARGET_ROOT_OUT)/init.rc
-#ALL_PREBUILT += $(file)
-#$(file) : $(LOCAL_PATH)/init.rc | $(ACP)
-#	$(transform-prebuilt-to-target)
-	
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/init.rc:root/init.rc
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := sensors.hero.so
@@ -124,26 +116,14 @@ include $(BUILD_PREBUILT)
 #
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE := AudioFilter.csv
-LOCAL_SRC_FILES := proprietary/$(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE := AudioPreProcess.csv
-LOCAL_SRC_FILES := proprietary/$(LOCAL_MODULE)
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE := vold.conf
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := prebuilt/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE := agps_rm
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := prebuilt/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
 # WiFi driver and firmware
@@ -162,7 +142,7 @@ LOCAL_MODULE := wlan.ko
 LOCAL_MODULE_TAGS := user
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT)/lib/modules
-LOCAL_SRC_FILES := $(LOCAL_MODULE)
+LOCAL_SRC_FILES := prebuilt/$(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
