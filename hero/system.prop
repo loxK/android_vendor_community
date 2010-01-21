@@ -17,3 +17,21 @@ ro.sf.lcd_density = 160
 # 0 => WCDMA Preferred.
 ro.telephony.default_network = 0
 
+#
+# ADDITIONAL_BUILD_PROPERTIES
+#
+ro.url.legal=http://www.google.com/intl/%s/mobile/android/basic/phone-legal.html
+ro.url.legal.android_privacy=http://www.google.com/intl/%s/mobile/android/basic/privacy.html
+ro.com.google.networklocation=1
+ro.setupwizard.mode=DISABLED
+ro.config.ringtone=Innovation.mp3
+ro.config.notification_sound=Color.mp3
+ro.config.alarm_sound=Light.mp3
+ro.config.cal_notification=Vector.mp3
+ro.config.msg_notification=Ascend.mp3
+ro.setupwizard.mode=OPTIONAL
+ro.config.sync=yes
+dalvik.vm.dexopt-flags=m=y
+net.bt.name=Android
+dalvik.vm.stack-trace-file=/data/anr/traces.txt
+
