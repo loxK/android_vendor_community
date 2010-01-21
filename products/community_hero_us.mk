@@ -14,19 +14,22 @@
 # limitations under the License.
 #
 
-#
-# This file should set PRODUCT_MAKEFILES to a list of product makefiles
-# to expose to the build system.  LOCAL_DIR will already be set to
-# the directory containing this file.
-#
-# This file may not rely on the value of any variable other than
-# LOCAL_DIR; do not use any conditionals, and do not look up the
-# value of any variable that isn't set in this file or in a file that
-# it includes.
-#
+# This is the top-level configuration for a US-configured HTC Hero build
 
-PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/community_hero_eu.mk \
-	$(LOCAL_DIR)/community_hero_us.mk \
-	$(LOCAL_DIR)/community_liquid.mk \
-	$(LOCAL_DIR)/community_dream.mk
+$(call inherit-product, vendor/community/products/core.mk)
+
+PRODUCT_NAME := community_hero_us
+
+# Which actual hardware this is based on (this is a path under vendor/)
+PRODUCT_MANUFACTURER := htc
+PRODUCT_DEVICE := hero
+
+# The user-visible product name
+PRODUCT_MODEL := AOSP Hero
+
+TARGET_BUILD_TYPE := release
+
+PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
+
+# Pick up some hero settings (gps and voice settings).
+include vendor/community/hero/device.mk

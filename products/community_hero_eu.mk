@@ -14,11 +14,12 @@
 # limitations under the License.
 #
 
-# This is the top-level configuration for a US-configured HTC community build
+# This is the top-level configuration for a EU-configured HTC Hero build
 
 $(call inherit-product, vendor/community/products/core.mk)
 
-PRODUCT_NAME := community_hero
+PRODUCT_NAME := community_hero_eu
+PRODUCT_REGION_EU := true
 
 # Which actual hardware this is based on (this is a path under vendor/)
 PRODUCT_MANUFACTURER := htc
@@ -33,14 +34,3 @@ PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 
 # Pick up some hero settings (gps and voice settings).
 include vendor/community/hero/device.mk
-
-# Pick up some sounds
-include frameworks/base/data/sounds/AudioPackage2.mk
-
-# TTS languages
-include external/svox/pico/lang/PicoLangDeDeInSystem.mk
-include external/svox/pico/lang/PicoLangEnGBInSystem.mk
-include external/svox/pico/lang/PicoLangEnUsInSystem.mk
-include external/svox/pico/lang/PicoLangEsEsInSystem.mk
-include external/svox/pico/lang/PicoLangFrFrInSystem.mk
-include external/svox/pico/lang/PicoLangItItInSystem.mk
