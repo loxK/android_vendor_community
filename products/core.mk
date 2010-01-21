@@ -162,6 +162,11 @@ PRODUCT_LOCALES := \
 	zh_CN \
 	zh_TW
 
+# Force dex optimization (this may not work if you are on a Mac)
+WITH_DEXPREOPT := true
+DISABLE_DEXPREOPT := false
+
+
 # Pick up some sounds
 include frameworks/base/data/sounds/AudioPackage2.mk
 
