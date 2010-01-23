@@ -19,11 +19,6 @@ ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/proprietary/libhtc_acoustic.so | $(ACP)
 	$(transform-prebuilt-to-target)
 
-file := $(TARGET_OUT)/lib/libspeech.so
-ALL_PREBUILT += $(file)
-$(file) : $(LOCAL_PATH)/proprietary/libspeech.so | $(ACP)
-	$(transform-prebuilt-to-target)
-
 file := $(TARGET_OUT)/usr/keychars/hero-keypad.kcm.bin
 ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/proprietary/hero-keypad.kcm.bin | $(ACP)
