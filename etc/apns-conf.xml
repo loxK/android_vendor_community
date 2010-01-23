@@ -140,6 +140,7 @@
   <apn carrier="Telenor MMS" mcc="242" mnc="01" apn="telenor" user="dj" server="" password="dj" mmsproxy="10.10.10.11" mmsport="8080" mmsc="~http://mmsc/" type="mms" proxy="" port=""/>
   <apn carrier="tele.ring WEB" apn="web" user="web@telering.at" password="web" server="" mmsc="" mmsproxy="" mmsport="" mcc="232" mnc="07" type=""/>
   <apn carrier="tele.ring MMS" apn="mms" user="wap@telering.at" password="wap" server="" mmsc="http://relay.mms.telering.at" mmsproxy="212.95.31.50" mmsport="8080" mcc="232" mnc="07" type="mms"/>
+  <apn carrier="Telia S" name="Telia Internet" mcc="240" mnc="01" apn="online.telia.se" user="*" server="" password="*" proxy="" port="" mmsproxy="" mmsport="" mmsprotocol="" mmsc="" type="default" />
   <apn carrier="Telipol Internet" mcc="242" mnc="05" apn="internet" user="" server="" password="" mmsproxy="" mmsport="" mmsc="" type="" proxy="" port=""/>
   <apn carrier="Telkomsel Internet" apn="internet" type="" user="wap" pass="wap123" mcc="510" mnc="10"/>
   <apn carrier="Telopol MMS" mcc="242" mnc="05" apn="mms" user="" server="" password="" mmsproxy="89.254.65.20" mmsport="80" mmsc="http://mms.nwn.no" type="mms" proxy="" port=""/>
