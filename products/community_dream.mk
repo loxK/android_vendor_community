@@ -36,15 +36,3 @@ PRODUCT_LOCALES += \
 
 # Pick up some hero settings (gps and voice settings).
 include vendor/community/dream/device.mk
-
-# Pick up some sounds
-include frameworks/base/data/sounds/OriginalAudio.mk
-#include frameworks/base/data/sounds/AudioPackage2.mk
-
-# TTS languages
-#include external/svox/pico/lang/PicoLangDeDeInSystem.mk
-include external/svox/pico/lang/PicoLangEnGBInSystem.mk
-#include external/svox/pico/lang/PicoLangEnUsInSystem.mk
-#include external/svox/pico/lang/PicoLangEsEsInSystem.mk
-#include external/svox/pico/lang/PicoLangFrFrInSystem.mk
-#include external/svox/pico/lang/PicoLangItItInSystem.mk
