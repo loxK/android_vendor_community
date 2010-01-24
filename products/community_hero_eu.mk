@@ -16,10 +16,14 @@
 
 # This is the top-level configuration for a EU-configured HTC Hero build
 
+# Should core.mk include the TTS langs
+INCLUDE_TTS_LANGS := true
+INCLUDE_ALL_LOCALES := true
+PRODUCT_REGION_EU := true
+
 $(call inherit-product, vendor/community/products/core.mk)
 
 PRODUCT_NAME := community_hero_eu
-PRODUCT_REGION_EU := true
 
 # Which actual hardware this is based on (this is a path under vendor/)
 PRODUCT_MANUFACTURER := htc
@@ -35,6 +39,9 @@ PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 PRODUCT_LOCALES += \
 	mdpi \
 	hdpi
+
+# Pick up some sounds
+include frameworks/base/data/sounds/AudioPackage4.mk
 
 # Pick up some hero settings (gps and voice settings).
 include vendor/community/hero/device.mk

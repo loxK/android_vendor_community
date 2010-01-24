@@ -16,6 +16,10 @@
 
 # This is the top-level configuration for a US-configured HTC community build
 
+# Should core.mk include the TTS langs
+INCLUDE_TTS_LANGS := false
+INCLUDE_ALL_LOCALES := false
+
 $(call inherit-product, vendor/community/products/core.mk)
 
 PRODUCT_NAME := community_dream
@@ -32,7 +36,11 @@ TARGET_BUILD_TYPE := release
 PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 
 PRODUCT_LOCALES += \
-        mdpi
+        mdpi \
+	hdpi
+
+# Pick up some sounds
+include frameworks/base/data/sounds/OriginalAudio.mk
 
 # Pick up some hero settings (gps and voice settings).
 include vendor/community/dream/device.mk

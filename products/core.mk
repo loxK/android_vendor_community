@@ -94,10 +94,15 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
 	vendor/community/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
 	vendor/community/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
-   			  
-# This is the list of locales included in AOSP builds
+
+# Include en_US by default.
 PRODUCT_LOCALES := \
-	en_US \
+	en_US
+
+ifeq ($(INCLUDE_ALL_LOCALES),true)
+
+# This is the list of locales included in AOSP builds
+PRODUCT_LOCALES += \
 	en_AU \
 	en_CA \
 	en_GB \
@@ -156,13 +161,12 @@ PRODUCT_LOCALES := \
 	zh_CN \
 	zh_TW
 
+endif # INCLUDE_ALL_LOCALES
 # Force dex optimization (this may not work if you are on a Mac)
 WITH_DEXPREOPT := true
 DISABLE_DEXPREOPT := false
 
-
-# Pick up some sounds
-include frameworks/base/data/sounds/AudioPackage2.mk
+ifeq ($(INCLUDE_TTS_LANGS),true)
 
 # TTS languages
 include external/svox/pico/lang/PicoLangDeDeInSystem.mk
@@ -171,6 +175,8 @@ include external/svox/pico/lang/PicoLangEnUsInSystem.mk
 include external/svox/pico/lang/PicoLangEsEsInSystem.mk
 include external/svox/pico/lang/PicoLangFrFrInSystem.mk
 include external/svox/pico/lang/PicoLangItItInSystem.mk
+
+endif # INCLUDE_TTS_LANGS
 
 #
 # ADDITIONAL_BUILD_PROPERTIES
