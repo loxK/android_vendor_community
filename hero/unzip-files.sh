@@ -27,10 +27,7 @@ unzip -j -d proprietary -o ../../../$ZIP \
 	system/lib/egl/egl.cfg \
 	system/lib/egl/libGLES_qcom.so \
 	system/lib/libGLESv1_CM.so \
-	system/lib/libGLESv2.so \
-	system/etc/permissions/com.google.android.datamessaging.xml \
-	system/etc/permissions/com.google.android.gtalkservice.xml \
-	system/etc/permissions/com.google.android.maps.xml
+	system/lib/libGLESv2.so
 
 touch proprietary/*
 

@@ -25,62 +25,61 @@ endif
 # This is the list of apps included in the build
 PRODUCT_PACKAGES := \
 	AccountAndSyncSettings \
-    AlarmProvider \
-    ApplicationsProvider \
-    Browser \
-    Bugreport \
-    Calculator \
-    Calendar \
-    CalendarProvider \
-    Camera \
-    Contacts \
-    ContactsProvider \
+	AlarmProvider \
+	ApplicationsProvider \
+	Browser \
+	Bugreport \
+	Calculator \
+	Calendar \
+	CalendarProvider \
+	Camera \
+	Contacts \
+	ContactsProvider \
 	CubeLiveWallpaper \
 	DeskClock \
-    DownloadProvider \
-    DrmProvider \
-    Email \
-    FieldTest \
+	DownloadProvider \
+	DrmProvider \
+	Email \
+	FieldTest \
 	Gallery3D \
-    GlobalSearch \
-    GoogleSearch \
-    HTMLViewer \
+	GlobalSearch \
+	GoogleSearch \
+	HTMLViewer \
 	IM \
 	IMProvider \
-    LatinIME \
-    Launcher \
+	LatinIME \
+	Launcher \
 	LiveWallpapers \
 	LiveWallpapersPicker \
 	MagicSmokeWallpapers \
-    MediaProvider \
-    Mms \
-    Music \
-    PackageInstaller \
-    Phone \
-    PicoTts \
-    Settings \
-    SettingsProvider \
-    SoundRecorder \
+	MediaProvider \
+	Mms \
+	Music \
+	PackageInstaller \
+	Phone \
+	PicoTts \
+	Settings \
+	SettingsProvider \
+	SoundRecorder \
 	Stk \
-    SubscribedFeedsProvider \
+	SubscribedFeedsProvider \
 	Superuser \
-    Sync \
-    SyncProvider \
-    TelephonyProvider \
-    TtsService \
-    Updater \
-    UserDictionaryProvider \
+	Sync \
+	SyncProvider \
+	TelephonyProvider \
+	TtsService \
+	Updater \
+	UserDictionaryProvider \
 	VisualizationWallpapers \
-    VoiceDialer \
-    VpnServices \
-    WebSearchProvider \
-    framework-res \
+	VoiceDialer \
+	VpnServices \
+	WebSearchProvider \
+	framework-res \
 	libRS \
 	librs_jni
 
 PRODUCT_COPY_FILES += \
 	vendor/community/xbin/apps2sd:system/xbin/apps2sd \
-	vendor/community/app/MarketEnabler.apk:system/app/MarketEnabler.apk \
 	vendor/community/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	vendor/community/etc/sysctl.conf:system/etc/sysctl.conf \
 	vendor/community/etc/fstab:system/etc/fstab \
@@ -90,9 +89,6 @@ PRODUCT_COPY_FILES += \
 	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
 	vendor/community/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
 	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
-	vendor/community/etc/permissions/com.google.android.datamessaging.xml:system/etc/permissions/com.google.android.datamessaging.xml \
-	vendor/community/etc/permissions/com.google.android.gtalkservice.xml:system/etc/permissions/com.google.android.gtalkservice.xml \
-	vendor/community/etc/permissions/com.google.android.maps.xml:system/etc/permissions/com.google.android.maps.xml \
 	vendor/community/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
 	vendor/community/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
 	vendor/community/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
