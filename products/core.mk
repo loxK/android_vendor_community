@@ -97,8 +97,6 @@ PRODUCT_COPY_FILES += \
    			  
 # This is the list of locales included in AOSP builds
 PRODUCT_LOCALES := \
-	mdpi \
-	hdpi \
 	en_US \
 	en_AU \
 	en_CA \

@@ -31,6 +31,10 @@ TARGET_BUILD_TYPE := release
 
 PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 
+PRODUCT_LOCALES += \
+        mdpi \
+	hdpi
+
 # Pick up some liquid settings (gps and voice settings).
 include vendor/community/liquid/device.mk
 

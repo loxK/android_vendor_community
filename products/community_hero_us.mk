@@ -31,5 +31,8 @@ TARGET_BUILD_TYPE := release
 
 PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
 
+PRODUCT_LOCALES += \
+	mdpi
+
 # Pick up some hero settings (gps and voice settings).
 include vendor/community/hero/device.mk
