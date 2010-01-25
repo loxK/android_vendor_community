@@ -70,6 +70,8 @@ ALL_PREBUILT += $(file)
 $(file) : $(LOCAL_PATH)/init.hero.rc | $(ACP)
 	$(transform-prebuilt-to-target)
 
+PRODUCT_COPY_FILES += $(LOCAL_PATH)/init.rc:root/init.rc
+
 include $(CLEAR_VARS)
 LOCAL_SRC_FILES := prebuilt/hero-keypad.kcm
 include $(BUILD_KEY_CHAR_MAP)
