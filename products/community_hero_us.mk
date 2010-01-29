@@ -18,3 +18,5 @@
 
 $(call inherit-product, vendor/community/products/community_hero.mk)
 
+PRODUCT_NAME := community_hero_us
+

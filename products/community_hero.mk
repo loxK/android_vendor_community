@@ -22,7 +22,7 @@ INCLUDE_ALL_LOCALES := true
 
 $(call inherit-product, vendor/community/products/core.mk)
 
-PRODUCT_NAME := community_hero_us
+PRODUCT_NAME := community_hero
 
 # Which actual hardware this is based on (this is a path under vendor/)
 PRODUCT_BRAND := htc
