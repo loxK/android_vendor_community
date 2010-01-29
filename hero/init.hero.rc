@@ -100,4 +100,3 @@ service netsharing_on /system/bin/netsharing net on
 service netsharing_off /system/bin/netsharing net off
 	disabled
 	oneshot
-
