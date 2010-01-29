@@ -27,15 +27,16 @@ PRODUCT_PACKAGES := \
 	AccountAndSyncSettings \
 	AlarmProvider \
 	ApplicationsProvider \
+	Bluetooth \
 	Browser \
 	Bugreport \
 	Calculator \
 	Calendar \
 	CalendarProvider \
 	Camera \
+    CertInstaller \
 	Contacts \
 	ContactsProvider \
-	CubeLiveWallpaper \
 	DeskClock \
 	DownloadProvider \
 	DrmProvider \
@@ -58,6 +59,7 @@ PRODUCT_PACKAGES := \
 	PackageInstaller \
 	Phone \
 	PicoTts \
+	Provision \
 	Settings \
 	SettingsProvider \
 	SoundRecorder \
@@ -71,6 +73,7 @@ PRODUCT_PACKAGES := \
 	Updater \
 	UserDictionaryProvider \
 	VisualizationWallpapers \
+	CubeLiveWallpaper \
 	VoiceDialer \
 	VpnServices \
 	WebSearchProvider \
