@@ -7,7 +7,7 @@ loglevel 3
 
 # setup the global environment
     # add by Justin_Liu, :/system/framework/com.scalado.util.ScaladoUtil.jar
-    export PATH /sbin:/system/sbin:/system/xbin/bb:/system/bin:/system/xbin:/data/local/bin
+    export PATH /usr/bin:/usr/sbin:/bin:/sbin:/system/sbin:/system/bin:/system/xbin:/system/xbin/bb:/data/local/bin
     export LD_LIBRARY_PATH /system/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
