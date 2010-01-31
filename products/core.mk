@@ -82,15 +82,21 @@ PRODUCT_PACKAGES := \
 	librs_jni
 
 PRODUCT_COPY_FILES += \
+        vendor/community/prebuild/bin/compcache:system/bin/compcache \
+        vendor/community/prebuild/bin/fix_permissions:system/bin/fix_permissions \
+        vendor/community/prebuild/bin/shutdown:system/bin/shutdown \
+        vendor/community/prebuild/bin/usb-tether:system/bin/usb-tether \
+        vendor/community/prebuild/etc/dnsmasq.conf:system/etc/dnsmasq.conf \
 	vendor/community/prebuild/xbin/apps2sd:system/xbin/apps2sd \
 	vendor/community/prebuild/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	vendor/community/prebuild/etc/sysctl.conf:system/etc/sysctl.conf \
 	vendor/community/prebuild/etc/fstab:system/etc/fstab \
 	vendor/community/prebuild/etc/init.d/00banner:system/etc/init.d/00banner \
 	vendor/community/prebuild/etc/init.d/01settings:system/etc/init.d/01settings \
-	vendor/community/prebuild/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-	vendor/community/prebuild/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-	vendor/community/prebuild/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
+	vendor/community/prebuild/etc/init.d/10sysctl:system/etc/init.d/10sysctl \
+	vendor/community/prebuild/etc/init.d/20firstboot:system/etc/init.d/20firstboot \
+	vendor/community/prebuild/etc/init.d/30apps2sd:system/etc/init.d/30apps2sd \
+	vendor/community/prebuild/etc/init.d/40userinit:system/etc/init.d/40userinit \
 	vendor/community/prebuild/etc/init.d/99complete:system/etc/init.d/99complete \
 	vendor/community/prebuild/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
 	vendor/community/prebuild/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
