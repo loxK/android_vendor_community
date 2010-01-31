@@ -82,21 +82,21 @@ PRODUCT_PACKAGES := \
 	librs_jni
 
 PRODUCT_COPY_FILES += \
-	vendor/community/xbin/apps2sd:system/xbin/apps2sd \
-	vendor/community/etc/apns-conf.xml:system/etc/apns-conf.xml \
-	vendor/community/etc/sysctl.conf:system/etc/sysctl.conf \
-	vendor/community/etc/fstab:system/etc/fstab \
-	vendor/community/etc/init.d/00banner:system/etc/init.d/00banner \
-	vendor/community/etc/init.d/01settings:system/etc/init.d/01settings \
-	vendor/community/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
-	vendor/community/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
-	vendor/community/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
-	vendor/community/etc/init.d/99complete:system/etc/init.d/99complete \
-	vendor/community/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
-	vendor/community/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-	vendor/community/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	vendor/community/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	vendor/community/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+	vendor/community/prebuild/xbin/apps2sd:system/xbin/apps2sd \
+	vendor/community/prebuild/etc/apns-conf.xml:system/etc/apns-conf.xml \
+	vendor/community/prebuild/etc/sysctl.conf:system/etc/sysctl.conf \
+	vendor/community/prebuild/etc/fstab:system/etc/fstab \
+	vendor/community/prebuild/etc/init.d/00banner:system/etc/init.d/00banner \
+	vendor/community/prebuild/etc/init.d/01settings:system/etc/init.d/01settings \
+	vendor/community/prebuild/etc/init.d/02sysctl:system/etc/init.d/02sysctl \
+	vendor/community/prebuild/etc/init.d/03firstboot:system/etc/init.d/03firstboot \
+	vendor/community/prebuild/etc/init.d/04apps2sd:system/etc/init.d/04apps2sd \
+	vendor/community/prebuild/etc/init.d/99complete:system/etc/init.d/99complete \
+	vendor/community/prebuild/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
+	vendor/community/prebuild/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+	vendor/community/prebuild/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+	vendor/community/prebuild/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	vendor/community/prebuild/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
 # Include en_US by default.
 PRODUCT_LOCALES := \
