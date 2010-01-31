@@ -82,6 +82,11 @@ PRODUCT_PACKAGES := \
 	librs_jni
 
 PRODUCT_COPY_FILES += \
+        vendor/community/prebuild/bin/compcache:system/bin/compcache \
+        vendor/community/prebuild/bin/fix_permissions:system/bin/fix_permissions \
+        vendor/community/prebuild/bin/shutdown:system/bin/shutdown \
+        vendor/community/prebuild/bin/usb-tether:system/bin/usb-tether \
+        vendor/community/prebuild/etc/dnsmasq.conf:system/etc/dnsmasq.conf \
 	vendor/community/prebuild/xbin/apps2sd:system/xbin/apps2sd \
 	vendor/community/prebuild/etc/apns-conf.xml:system/etc/apns-conf.xml \
 	vendor/community/prebuild/etc/sysctl.conf:system/etc/sysctl.conf \
