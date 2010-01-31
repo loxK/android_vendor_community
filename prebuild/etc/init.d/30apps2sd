@@ -23,7 +23,7 @@ then
         busybox chmod 771 /system/sd;
 
         # clean up any old symlinks, create data directories
-        for i in dalvik-cache data;
+        for i in data;
         do
             if [ -h /data/$i ];
             then
@@ -49,8 +49,8 @@ then
             
             echo "--- A2SD enabled";
        
-            # move apps and dalvik cache from internal memory to sdcard
-            for i in app app-private dalvik-cache;
+            # move apps from internal memory to sdcard
+            for i in app app-private;
             do
                 if [ ! -d /system/sd/$i ];
                 then
@@ -78,9 +78,9 @@ then
             done;
 
             # bind mount dalvik-cache so we can still boot without the sdcard
-            busybox mount -o bind /system/sd/dalvik-cache /data/dalvik-cache;
-            busybox chown 1000:1000 /data/dalvik-cache;
-            busybox chmod 771 /data/dalvik-cache;
+            #busybox mount -o bind /system/sd/dalvik-cache /data/dalvik-cache;
+            #busybox chown 1000:1000 /data/dalvik-cache;
+            #busybox chmod 771 /data/dalvik-cache;
 
             # clean up old whiteouts
             for i in local misc property system tombstones data;
@@ -119,8 +119,8 @@ then
         then
             echo "--- A2SD disabled";
         
-            # move apps and dalvik cache from sdcard to memory
-            for i in app app-private dalvik-cache;
+            # move apps from sdcard to memory
+            for i in app app-private;
             do
                 if [ -h /data/$i ];
                 then
