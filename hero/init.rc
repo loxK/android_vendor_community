@@ -7,7 +7,7 @@ loglevel 3
 
 # setup the global environment
     # add by Justin_Liu, :/system/framework/com.scalado.util.ScaladoUtil.jar
-    export PATH /sbin:/system/sbin:/system/xbin/bb:/system/bin:/system/xbin:/data/local/bin
+    export PATH /usr/bin:/usr/sbin:/bin:/sbin:/system/sbin:/system/bin:/system/xbin:/system/xbin/bb:/data/local/bin
     export LD_LIBRARY_PATH /system/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
@@ -354,38 +354,34 @@ service bluetoothd /system/bin/bluetoothd -n
     group bluetooth net_bt_admin misc
     disabled
 
-#service hfag /system/bin/sdptool add --channel=10 HFAG
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
-#    oneshot
+service hfag /system/bin/sdptool add --channel=10 HFAG
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
-#service hsag /system/bin/sdptool add --channel=11 HSAG
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
-#    oneshot
+service hsag /system/bin/sdptool add --channel=11 HSAG
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
-#service opush /system/bin/sdptool add --channel=12 OPUSH
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
-#    oneshot
+service opush /system/bin/sdptool add --channel=12 OPUSH
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
-#service pbap /system/bin/sdptool add --channel=19 PBAP
-#    user bluetooth
-#    group bluetooth net_bt_admin
-#    disabled
-#    oneshot
+service pbap /system/bin/sdptool add --channel=19 PBAP
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+    oneshot
 
 service installd /system/bin/installd
     socket installd stream 600 system system
 
 service flash_recovery /system/etc/install-recovery.sh
-    oneshot
-
-service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
-    disabled
     oneshot
 
 service racoon /system/bin/racoon
@@ -417,7 +413,10 @@ service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/f
     oneshot
 # Discretix DRM change end
 
-# Clean shutdown
+service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
+    disabled
+    oneshot
+
 service reboot /system/bin/shutdown -r
     disabled
     oneshot
