@@ -413,10 +413,42 @@ service dx_drm_server /system/bin/DxDrmServerIpc -f -o allow_other /data/DxDrm/f
     oneshot
 # Discretix DRM change end
 
+# Execute files in /etc/init.d before booting
 service sysinit /system/bin/logwrapper /system/xbin/busybox run-parts /system/etc/init.d
     disabled
     oneshot
 
+# Clean shutdown
 service reboot /system/bin/shutdown -r
     disabled
     oneshot
+
+service poweroff /system/bin/shutdown
+    disabled
+
+# USB internet sharing
+service dnsmasq /system/bin/logwrapper /system/bin/dnsmasq -d
+    disabled
+
+service tether_on /system/bin/logwrapper /system/bin/sh /system/bin/usb-tether start
+    disabled
+    oneshot
+
+service tether_off /system/bin/logwrapper /system/bin/sh /system/bin/usb-tether stop
+    disabled
+    oneshot
+
+# Compcache
+service compcache_on /system/bin/logwrapper /system/bin/sh /system/bin/compcache start
+    disabled
+    oneshot
+
+service compcache_off /system/bin/logwrapper /system/bin/sh /system/bin/compcache stop
+    disabled
+    oneshot
+
+on property:persist.service.compcache=1
+    start compcache_on
+
+on property:persist.service.compcache=0
+    start compcache_off
