@@ -176,10 +176,6 @@ WITH_DEXPREOPT := true
 DISABLE_DEXPREOPT := false
 WITH_DEXPREOPT_buildbot := true
 
-# Build the JIT, but disable it for right now because of stability issues
-WITH_JIT := true
-PRODUCT_PROPERTY_OVERRIDES += dalvik.vm.execution-mode=int:fast
-
 ifeq ($(INCLUDE_TTS_LANGS),true)
 
 # TTS languages
