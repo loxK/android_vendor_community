@@ -174,6 +174,7 @@ endif # INCLUDE_ALL_LOCALES
 # Force dex optimization (this may not work if you are on a Mac)
 WITH_DEXPREOPT := true
 DISABLE_DEXPREOPT := false
+WITH_DEXPREOPT_buildbot := true
 
 # Build the JIT, but disable it for right now because of stability issues
 WITH_JIT := true
