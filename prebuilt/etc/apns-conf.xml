@@ -138,6 +138,8 @@
   <apn carrier="Telenor" apn="telenor" user="dj" password="dj" mmsc="http://mmsc/" mmscproxy="10.10.10.11" mmsport="8080" mcc="242" mnc="01" type="mms"/>
   <apn carrier="Telenor Internet" mcc="242" mnc="01" apn="telenor" user="dj" server="" password="dj" mmsproxy="" mmsport="" mmsc="" proxy="10.10.10.10" port="8080" type="default,supl" />
   <apn carrier="Telenor MMS" mcc="242" mnc="01" apn="telenor" user="dj" server="" password="dj" mmsproxy="10.10.10.11" mmsport="8080" mmsc="~http://mmsc/" type="mms" proxy="" port=""/>
+  <apn carrier="Telenor DK" mcc="238" mnc="02" apn="internet" user="" server="" password="" mmsc="" type="default"/>
+  <apn carrier="Telenor DK MMS" mcc="238" mnc="02" apn="telenor" user="telenor" server="" password="telenor" mmsc="http://mms.telenor.dk" mmsproxy="212.88.64.8" mmsport="9201" type="mms"/>
   <apn carrier="tele.ring WEB" apn="web" user="web@telering.at" password="web" server="" mmsc="" mmsproxy="" mmsport="" mcc="232" mnc="07" type="default,supl"/>
   <apn carrier="tele.ring MMS" apn="mms" user="wap@telering.at" password="wap" server="" mmsc="http://relay.mms.telering.at" mmsproxy="212.95.31.50" mmsport="8080" mcc="232" mnc="07" type="mms"/>
   <apn carrier="Telipol Internet" mcc="242" mnc="05" apn="internet" user="" server="" password="" mmsproxy="" mmsport="" mmsc="" proxy="" port=""/>
