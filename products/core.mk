@@ -82,27 +82,27 @@ PRODUCT_PACKAGES := \
 	librs_jni
 
 PRODUCT_COPY_FILES += \
-        vendor/community/prebuild/bin/compcache:system/bin/compcache \
-        vendor/community/prebuild/bin/fix_permissions:system/bin/fix_permissions \
-        vendor/community/prebuild/bin/shutdown:system/bin/shutdown \
-        vendor/community/prebuild/bin/usb-tether:system/bin/usb-tether \
-        vendor/community/prebuild/etc/dnsmasq.conf:system/etc/dnsmasq.conf \
-	vendor/community/prebuild/xbin/apps2sd:system/xbin/apps2sd \
-	vendor/community/prebuild/etc/apns-conf.xml:system/etc/apns-conf.xml \
-	vendor/community/prebuild/etc/sysctl.conf:system/etc/sysctl.conf \
-	vendor/community/prebuild/etc/fstab:system/etc/fstab \
-	vendor/community/prebuild/etc/init.d/00banner:system/etc/init.d/00banner \
-	vendor/community/prebuild/etc/init.d/01settings:system/etc/init.d/01settings \
-	vendor/community/prebuild/etc/init.d/10sysctl:system/etc/init.d/10sysctl \
-	vendor/community/prebuild/etc/init.d/20firstboot:system/etc/init.d/20firstboot \
-	vendor/community/prebuild/etc/init.d/30apps2sd:system/etc/init.d/30apps2sd \
-	vendor/community/prebuild/etc/init.d/40userinit:system/etc/init.d/40userinit \
-	vendor/community/prebuild/etc/init.d/99complete:system/etc/init.d/99complete \
-	vendor/community/prebuild/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
-	vendor/community/prebuild/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-	vendor/community/prebuild/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
-	vendor/community/prebuild/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
-	vendor/community/prebuild/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
+        vendor/community/prebuilt/bin/compcache:system/bin/compcache \
+        vendor/community/prebuilt/bin/fix_permissions:system/bin/fix_permissions \
+        vendor/community/prebuilt/bin/shutdown:system/bin/shutdown \
+        vendor/community/prebuilt/bin/usb-tether:system/bin/usb-tether \
+        vendor/community/prebuilt/etc/dnsmasq.conf:system/etc/dnsmasq.conf \
+	vendor/community/prebuilt/xbin/apps2sd:system/xbin/apps2sd \
+	vendor/community/prebuilt/etc/apns-conf.xml:system/etc/apns-conf.xml \
+	vendor/community/prebuilt/etc/sysctl.conf:system/etc/sysctl.conf \
+	vendor/community/prebuilt/etc/fstab:system/etc/fstab \
+	vendor/community/prebuilt/etc/init.d/00banner:system/etc/init.d/00banner \
+	vendor/community/prebuilt/etc/init.d/01settings:system/etc/init.d/01settings \
+	vendor/community/prebuilt/etc/init.d/10sysctl:system/etc/init.d/10sysctl \
+	vendor/community/prebuilt/etc/init.d/20firstboot:system/etc/init.d/20firstboot \
+	vendor/community/prebuilt/etc/init.d/30apps2sd:system/etc/init.d/30apps2sd \
+	vendor/community/prebuilt/etc/init.d/40userinit:system/etc/init.d/40userinit \
+	vendor/community/prebuilt/etc/init.d/99complete:system/etc/init.d/99complete \
+	vendor/community/prebuilt/etc/permissions/extra_permissions.xml:system/etc/permissions/extra_permissions.xml \
+	vendor/community/prebuilt/etc/permissions/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+	vendor/community/prebuilt/etc/permissions/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
+	vendor/community/prebuilt/etc/permissions/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
+	vendor/community/prebuilt/etc/permissions/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
 # Include en_US by default.
 PRODUCT_LOCALES := \
