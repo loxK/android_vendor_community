@@ -35,6 +35,7 @@ PRODUCT_MANUFACTURER := HTC
 TARGET_BUILD_TYPE := release
 
 PRODUCT_PACKAGE_OVERLAYS := vendor/community/overlay
+DEVICE_PACKAGE_OVERLAYS := vendor/community/hero/overlay
 
 PRODUCT_LOCALES += \
 	mdpi \
