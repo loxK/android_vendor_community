@@ -176,6 +176,9 @@ WITH_DEXPREOPT := true
 DISABLE_DEXPREOPT := false
 WITH_DEXPREOPT_buildbot := true
 
+# Build WebKit with V8
+JS_ENGINE := v8
+
 ifeq ($(INCLUDE_TTS_LANGS),true)
 
 # TTS languages
